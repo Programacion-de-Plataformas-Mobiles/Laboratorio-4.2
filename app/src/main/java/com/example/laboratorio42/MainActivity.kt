@@ -149,7 +149,7 @@ fun HealthyLivingApp(modifier: Modifier = Modifier,
                         url.value = ""
                     } else {
                         scope.launch {
-                            snackbarHostState.showSnackbar("Ya existe una receta con ese nombre o URL")
+                            snackbarHostState.showSnackbar("Ya existe una receta con ese nombre o está vacío.")
                         }
                     }
                 },
