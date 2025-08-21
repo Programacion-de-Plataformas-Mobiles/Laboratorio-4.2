@@ -196,6 +196,7 @@ fun HealthyLivingApp(modifier: Modifier = Modifier,
 fun RecetaCard(receta: Receta,
                onEliminarReceta: () -> Unit) {
     Card(
+        onClick = {onEliminarReceta()},
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 4.dp),
@@ -226,23 +227,6 @@ fun RecetaCard(receta: Receta,
                     fontWeight = FontWeight.Bold,
                     fontSize = 18.sp
                 )
-            }
-            Spacer(modifier = Modifier.width(16.dp))
-            Button(
-                onClick = onEliminarReceta,
-                shape = RoundedCornerShape(8.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.errorContainer,
-                    contentColor = MaterialTheme.colorScheme.onErrorContainer
-                )
-            ) {
-                Icon(
-                    imageVector = Icons.Filled.Delete,
-                    contentDescription = null,
-                    modifier = Modifier.size(ButtonDefaults.IconSize)
-                )
-                Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
-                Text("Eliminar")
             }
         }
     }
